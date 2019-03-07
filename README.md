@@ -13,3 +13,12 @@
     1. write yaml
     2. execute python3 script
     3. output weekly report
+
+## git command memo
+
+```
+git status ; git add . ; git status
+git commit -m "edit files" ; git push origin master
+```
+
+

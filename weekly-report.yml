@@ -1,0 +1,37 @@
+---
+- name: weekly report
+  author: Hirofumi Hida
+  sendto: [ hoge@example.com, fuga@example.com ]
+  start: 2019-02-25
+  delivery:
+          - name: Project A
+            customer: Customer A
+            actual: [ Monday, Friday ]
+            forecast: [ Monday, Friday ]
+            desc: [ development, trouble shooting, handle support cases ]
+          - name: Project B
+            cusotomer: Customer B
+            actual: [ Wednesday ]
+            forecast: [ Wednesday ]
+            desc: [ flow development ]
+  training:
+          - name: Product A webinar
+            actual: [ Wednesday ]
+            desc: 
+  meating:
+          - name: Project A Monthly MTG
+            actual: [ Monday ]
+            desc: 
+  investigation:
+  study:
+  leave:
+          - name: FWP
+            actual: []
+            forecast: []
+          - name: Paid Leave
+            actual: []
+            forecast: []
+          - name: Holiday
+            actual: []
+            forecast: []
+
