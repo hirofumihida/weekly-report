@@ -7,12 +7,15 @@
   delivery:
           - name: Project A
             customer: Customer A
+            billable: true
             actuals: [ Monday, Friday ]
             forecasts: [ Monday, Friday ]
             desc-actual: [ "development, trouble shooting, handle support cases" ]
             desc-forecast: [ "development, trouble shooting, handle support cases" ]
+            meeting: { 'Monday':['Monthly MTG',''] }
           - name: Project B
             cusotomer: Customer B
+            billable: true
             actuals: []
             forecasts: [ Wednesday ]
             desc-actual: [ "flow development" ]

@@ -17,6 +17,8 @@ trainingData = data[0]['training']
 meetingData = data[0]['meeting']
 leaveData = data[0]['leave']
 
+print(deliveryData)
+
 PATH = os.path.dirname(os.path.abspath(__file__))
 TEMPLATE_ENVIRONMENT = Environment(
     autoescape=False,
