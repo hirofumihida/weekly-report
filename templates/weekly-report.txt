@@ -19,132 +19,58 @@ Subject: {{ headerdata[1] }} by {{ headerdata[0] }}, actual week start from {{ h
 
 Body:
 
-- Delivery:
+- Notation:
+    - actual starts from {{ headerdata[2] }} {{ headerdata[3] }}
+    - forecast starts from {{ headerdata[4] }} {{ headerdata[3] }}
 
-    - Actual:
-{% for deliverydata in deliverydata -%}
-    {% if deliverydata['actuals']|length > 0 %}
+- Delivery (Billable)
+
+    - Actual
+{% for deliverydata in deliverydata %}
+{%- if deliverydata['billable'] == true  %}
+{%- for key, value in deliverydata['working'].items() %}
+{%- if key == 'actual' %}
         Project Name: {{ deliverydata['name'] }}
         Customer Name: {{ deliverydata['customer'] }}
-        Actual Working: {% for actualday in deliverydata['actuals'] -%}
-    {% if not loop.last -%}
-      {{ actualday }},
-    {%- else -%}
-      {{ ' ' + actualday }}
-    {%- endif %}
-    {%- endfor %}
-        Descriptions: {{ deliverydata['desc-actual'][0] }}
-    {% endif %}
+        Forecast Working:
+{%- for actuals in value %}
+            {{ actuals }}
 {%- endfor %}
-    - Forecast:
-{% for deliverydata in deliverydata -%}
-    {% if deliverydata['forecasts']|length > 0 %}
+{% endif %}
+{%- endfor %}
+{%- endif %}
+{%- endfor %}
+
+    - Forecast
+{% for deliverydata in deliverydata %}
+{%- if deliverydata['billable'] == true  %}
+{%- for key, value in deliverydata['working'].items() %}
+{%- if key == 'forecast' %}
         Project Name: {{ deliverydata['name'] }}
         Customer Name: {{ deliverydata['customer'] }}
-        Forecast Working: {% for forecastday in deliverydata['forecasts'] -%}
-    {% if not loop.last -%}
-      {{ forecastday }},
-    {%- else -%}
-      {{ ' ' + forecastday }}
-    {%- endif %}
-    {%- endfor %}
-        Descriptions: {{ deliverydata['desc-forecast'][0] }}
-    {% endif %}
-{% endfor -%}
-- Meeting
-
-    - Actual:
-{% for meetingdata in meetingdata -%}
-    {% if meetingdata['actuals']|length > 0 %}
-        Project Name: {{ meetingdata['name'] }}
-        Actual Working: {% for actualday in meetingdata['actuals'] -%}
-    {% if not loop.last -%}
-      {{ actualday }},
-    {%- else -%}
-      {{ ' ' + actualday }}
-    {%- endif %}
-    {%- endfor %}
-        Descriptions: {{ meetingdata['desc-actual'][0] }}
-    {% else %}
-        No Actual MTG
-    {% endif %}
+        Forecast Working:
+{%- for forecasts in value %}
+            {{ forecasts }}
 {%- endfor %}
-    - Forecast:
-{% for meetingdata in meetingdata -%}
-    {% if meetingdata['forecasts']|length > 0 %}
-        Project Name: {{ meetingdata['name'] }}
-        Actual Working: {% for forecastday in meetingdata['forecasts'] -%}
-    {% if not loop.last -%}
-      {{ forecastday }},
-    {%- else -%}
-      {{ ' ' + forecastday }}
-    {%- endif %}
-    {%- endfor %}
-        Descriptions: {{ meetingdata['desc-forecast'][0] }}
-    {% else %}
-        No Forecast MTG
-    {% endif %}
+{% endif %}
 {%- endfor %}
-- Training:
-
-    - Actual:
-{% for trainingdata in trainingdata -%}
-    {% if trainingdata['actuals']|length > 0 %}
-        Project Name: {{ trainingdata['name'] }}
-        Actual Working: {% for actualday in trainingdata['actuals'] -%}
-    {% if not loop.last -%}
-      {{ actualday }},
-    {%- else -%}
-      {{ ' ' + actualday }}
-    {%- endif %}
-    {%- endfor %}
-        Descriptions: {{ trainingdata['desc-actual'][0] }}
-    {% else %}
-        No Actual Training
-    {% endif %}
-{%- endfor %}
-    - Forecast:
-{% for trainingdata in trainingdata -%}
-    {% if trainingdata['forecasts']|length > 0 %}
-        Project Name: {{ trainingdata['name'] }}
-        Forecast Working: {% for forecastday in trainingdata['forecasts'] -%}
-    {% if not loop.last -%}
-      {{ forecastday }},
-    {%- else -%}
-      {{ ' ' + forecastday }}
-    {%- endif %}
-    {%- endfor %}
-        Descriptions: {{ trainingdata['desc-forecast'][0] }}
-    {% else %}
-        No Forecast Training
-    {% endif %}
-{%- endfor %}
-- Leave:
-
-    - Actual:
-{% for leavedata in leavedata -%}
-    {% if leavedata['actuals']|length > 0 %}
-        Leave Type: {{ leavedata['name'] }}
-        Actual Leave: {% for actualday in leavedata['actuals'] -%}
-    {% if not loop.last -%}
-      {{ actualday }},
-    {%- else -%}
-      {{ ' ' + actualday }}
-    {%- endif %}
-    {%- endfor %}
-    {% endif %}
-{%- endfor %}
-    - Forecast:
-{% for leavedata in leavedata -%}
-    {% if leavedata['forecasts']|length > 0 %}
-        Leave Type: {{ leavedata['name'] }}
-        Forecast Leave: {% for forecastday in leavedata['forecasts'] -%}
-    {% if not loop.last -%}
-      {{ forecastday }},
-    {%- else -%}
-      {{ ' ' + forecastday }}
-    {%- endif %}
-    {%- endfor %}
-    {% endif %}
+{%- endif %}
 {%- endfor %}
 
+- Delivery (Un-Billable)
+
+    - Actual
+{% for deliverydata in deliverydata %}
+{%- if deliverydata['billable'] == false  %}
+{%- for key, value in deliverydata['working'].items() %}
+{%- if key == 'actual' %}
+        Project Name: {{ deliverydata['name'] }}
+        Customer Name: {{ deliverydata['customer'] }}
+        Forecast Working:
+{%- for actuals in value %}
+            {{ actuals }}
+{%- endfor %}
+{% endif %}
+{%- endfor %}
+{%- endif %}
+{%- endfor %}

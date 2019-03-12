@@ -3,37 +3,35 @@
   author: Hirofumi Hida
   sendto: [ hoge@example.com ]
   sendcc: [ fuga1@example.com, fuga2@example.com ]
-  start: 2019-02-25
+  startdate: 2019-03-13
   delivery:
           - name: Project A
             customer: Customer A
             billable: true
-            actuals: [ Monday, Friday ]
-            forecasts: [ Monday, Friday ]
-            desc-actual: [ "development, trouble shooting, handle support cases" ]
-            desc-forecast: [ "development, trouble shooting, handle support cases" ]
-            meeting: { 'Monday':['Monthly MTG',''] }
+            working: {
+                    'actual':['Monday: dev','Friday: dev2'],
+                    'forecast':['Friday: dev3']
+                    }
           - name: Project B
-            cusotomer: Customer B
+            customer: Customer B
+            billable: false
+            working: {
+                    'actual':['Monday: dev','Friday: dev2'],
+                    'forecast':['Friday: dev3']
+                    }
+          - name: Project C
+            customer: Customer C
             billable: true
-            actuals: []
-            forecasts: [ Wednesday ]
-            desc-actual: [ "flow development" ]
-            desc-forecast: [ "flow development" ]
+            working: {
+                    'actual':['Monday: dev','Friday: dev2']
+                    }
   training:
           - name: Product A webinar
             actuals: [ Wednesday ]
             forecasts: []
-            desc-actual: []
-            desc-forecast: []
-  meeting:
-          - name: Project A Monthly MTG
-            actuals: [ Monday ]
+          - name: Product B webinar
+            actuals: [ Thursday ]
             forecasts: []
-            desc-actual: []
-            desc-forecast: [] 
-            #  investigation:
-            #  study:
   leave:
           - name: FWP
             actuals: []
