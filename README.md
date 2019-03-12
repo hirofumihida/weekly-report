@@ -39,70 +39,125 @@ MailTo:  hoge@example.com
 
 MailCc: fuga1@example.com; fuga2@example.com
 
-Subject: weekly report by Hirofumi Hida, actual week start from 2019-02-25
+Subject: weekly report by Hirofumi Hida, actual week start from 2019-03-11
 
 Body:
 
-- Delivery:
+- Notation:
+    - actual starts from 2019-03-11 Monday
+    - forecast starts from 2019-03-18 Monday
 
-    - Actual:
+- Delivery (Billable):
 
-        Project Name: Project A
-        Customer Name: Customer A
-        Actual Working: Monday, Friday
-        Descriptions: development, trouble shooting, handle support cases
-
-    - Forecast:
+    - Actual
 
         Project Name: Project A
         Customer Name: Customer A
-        Forecast Working: Monday, Friday
-        Descriptions: development, trouble shooting, handle support cases
+        Actual Working:
+            Monday: dev
+            Friday: dev2
+      
+        Project Name: Project C
+        Customer Name: Customer C
+        Actual Working:
+            Monday: dev
+            Friday: dev2
+      
+    - Forecast
 
+        Project Name: Project A
+        Customer Name: Customer A
+        Forecast Working:
+            Friday: dev3
+      
+- Delivery (Un-Billable):
+
+    - Actual
 
         Project Name: Project B
-        Customer Name:
-        Forecast Working:  Wednesday
-        Descriptions: flow development
+        Customer Name: Customer B
+        Actual Working:
+            Monday: dev
+            Friday: dev2
+      
+    - Forecast
 
-- Meeting
+        Project Name: Project B
+        Customer Name: Customer B
+        Forecast Working:
+            Friday: dev3
+      
+- Meeting (Billable):
 
-    - Actual:
+    - Actual
 
-        Project Name: Project A Monthly MTG
-        Actual Working:  Monday
-        Descriptions:
+        Project Name: Project A
+        Customer Name: Customer A
+        Actual Working:
+            Monday: Daily MTG
+            Friday: WeekLy MTG
+      
+  
+        Project Name: Project C
+        Customer Name: Customer C
+        Actual Working:
+            Monday: Daily MTG
+            Friday: WeekLy MTG
+      
+  
+    - Forecast
 
-    - Forecast:
+        Project Name: Project A
+        Customer Name: Customer A
+        Forecast Working:
+            Friday: Monthly MTG
+      
+  
+  
+- Meeting (Un-Billable):
 
-        No Forecast MTG
+    - Actual
 
+        Project Name: Project B
+        Customer Name: Customer B
+        Actual Working:
+            Monday: Daily MTG
+            Friday: WeekLy MTG
+      
+  
+    - Forecast
+
+        Project Name: Project B
+        Customer Name: Customer B
+        Forecast Working:
+            Friday: Monthly MTG
+      
+  
 - Training:
 
-    - Actual:
+    - Actual
 
-        Project Name: Product A webinar
-        Actual Working:  Wednesday
-        Descriptions:
+            No Actual Trainings
+  
+    - Forecast
 
-    - Forecast:
-
-        No Forecast Training
-
+            No Forecast Trainings
+  
 - Leave:
 
-    - Actual:
+    - Actual
 
-        Leave Type: Sick Leave
-        Actual Leave:  Tuesday
+        Project Name: Sick Leave
+        Actual Working:  Tuesday
+  
+    - Forecast
 
-    - Forecast:
-
-        Leave Type: Paid Leave
-        Forecast Leave:  Friday
-
-        Leave Type: Holiday
-        Forecast Leave:  Thursday
+        Project Name: Paid Leave
+        Forecast Working:  Friday
+  
+        Project Name: Holiday
+        Forecast Working:  Thursday
+  
 ```
 
 ## git command memo

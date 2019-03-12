@@ -3,7 +3,7 @@
   author: Hirofumi Hida
   sendto: [ hoge@example.com ]
   sendcc: [ fuga1@example.com, fuga2@example.com ]
-  startdate: 2019-03-13
+  startdate: 2019-03-11
   delivery:
           - name: Project A
             customer: Customer A
