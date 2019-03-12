@@ -19,4 +19,52 @@ Subject: {{ headerdata[1] }} by {{ headerdata[0] }}, actual week start from {{ h
 
 Body:
 
+- Delivery:
 
+    - Actual:
+{% for deliverydata in deliverydata -%}
+    {% if deliverydata['actuals']|length > 0 %}
+        Project Name: {{ deliverydata['name'] }}
+        Customer Name: {{ deliverydata['customer'] }}
+        Actual Working: {% for actualday in deliverydata['actuals'] -%}
+    {% if not loop.last -%}
+      {{ actualday }},
+    {%- else -%}
+      {{ ' ' + actualday }}
+    {%- endif %}
+{%- endfor %}
+        Descriptions: {{ deliverydata['desc-actual'][0] }}
+    {% endif %}
+{% endfor -%}
+    - Forecast:
+{% for deliverydata in deliverydata -%}
+    {% if deliverydata['forecasts']|length > 0 %}
+        Project Name: {{ deliverydata['name'] }}
+        Customer Name: {{ deliverydata['customer'] }}
+        Forecast Working: {% for forecastday in deliverydata['forecasts'] -%}
+    {% if not loop.last -%}
+      {{ forecastday }},
+    {%- else -%}
+      {{ ' ' + forecastday }}
+    {%- endif %}
+{%- endfor %}
+        Descriptions: {{ deliverydata['desc-forecast'][0] }}
+    {% endif %}
+{% endfor -%}
+- Meeting
+
+    - Actual:
+
+        {{ meetingdata }}
+
+    - Forecast:
+
+- Training:
+
+    - Actual:
+
+        {{ trainingdata }}
+
+    - Forecast:
+
+- 

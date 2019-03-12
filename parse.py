@@ -37,7 +37,10 @@ def create_weeklyreport():
     mailaddrsList = [sendTo, sendCc]
     context = {
             'headerdata': metaData,
-            'mailaddrs': mailaddrsList
+            'mailaddrs': mailaddrsList,
+            'deliverydata': deliveryData,
+            'trainingdata': trainingData,
+            'meetingdata': meetingData
     }
     print(render_template('weekly-report.txt', context))
 

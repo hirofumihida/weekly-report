@@ -7,36 +7,40 @@
   delivery:
           - name: Project A
             customer: Customer A
-            actual: [ Monday, Friday ]
-            forecast: [ Monday, Friday ]
-            desc: [ development, trouble shooting, handle support cases ]
+            actuals: [ Monday, Friday ]
+            forecasts: [ Monday, Friday ]
+            desc-actual: [ "development, trouble shooting, handle support cases" ]
+            desc-forecast: [ "development, trouble shooting, handle support cases" ]
           - name: Project B
             cusotomer: Customer B
-            actual: [ Wednesday ]
-            forecast: [ Wednesday ]
-            desc: [ flow development ]
+            actuals: []
+            forecasts: [ Wednesday ]
+            desc-actual: [ "flow development" ]
+            desc-forecast: [ "flow development" ]
   training:
           - name: Product A webinar
-            actual: [ Wednesday ]
-            forecast: []
-            desc: 
+            actuals: [ Wednesday ]
+            forecasts: []
+            desc-actual: []
+            desc-forecast: []
   meeting:
           - name: Project A Monthly MTG
-            actual: [ Monday ]
-            forecast: []
-            desc: 
+            actuals: [ Monday ]
+            forecasts: []
+            desc-actual: []
+            desc-forecast: [] 
             #  investigation:
             #  study:
   leave:
           - name: FWP
-            actual: []
-            forecast: []
+            actuals: []
+            forecasts: []
           - name: Paid Leave
-            actual: []
-            forecast: []
+            actuals: []
+            forecasts: [ Friday ]
           - name: Holiday
-            actual: []
-            forecast: []
+            actuals: []
+            forecasts: [ Thursday ]
           - name: Sick Leave
-            actual: []
+            actuals: [ Tuesday ]
 
