@@ -1,5 +1,9 @@
-MailTo: "{{ mailreceive[0] }}"
-MailCc: "{{ mailreceive[1] }}"
+MailTo: {% for mailaddr in  mailaddrs[0] -%}
+{{ mailaddr }};
+{%- endfor %}
+MailCc: {% for mailaddr in  mailaddrs[1] -%}
+{{ mailaddr }}; 
+{%- endfor %}
 
 Subject: 
 
