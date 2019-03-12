@@ -23,7 +23,6 @@ deliveryData = data[0]['delivery']
 trainingData = data[0]['training']
 meetingData = data[0]['meeting']
 
-
 PATH = os.path.dirname(os.path.abspath(__file__))
 TEMPLATE_ENVIRONMENT = Environment(
     autoescape=False,
@@ -34,10 +33,11 @@ def render_template(template_filename, context):
     return TEMPLATE_ENVIRONMENT.get_template(template_filename).render(context)
 
 def create_weeklyreport():
-    medaData = [reportAuther, subjectName, startDate ]
+    metaData = [reportAuther, subjectName, startDate ]
     mailaddrsList = [sendTo, sendCc]
     context = {
-        'mailaddrs': mailaddrsList
+            'headerdata': metaData,
+            'mailaddrs': mailaddrsList
     }
     print(render_template('weekly-report.txt', context))
 

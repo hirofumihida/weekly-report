@@ -1,11 +1,21 @@
-MailTo: {% for mailaddr in  mailaddrs[0] -%}
-{{ mailaddr }};
-{%- endfor %}
-MailCc: {% for mailaddr in  mailaddrs[1] -%}
-{{ mailaddr }}; 
+
+MailTo: {% for mailaddr in mailaddrs[0] -%}
+  {% if not loop.last -%}
+    {{ mailaddr }};
+  {%- else -%}
+    {{ ' ' + mailaddr }}
+  {%- endif %}
 {%- endfor %}
 
-Subject: 
+MailCc: {% for mailaddr in mailaddrs[1] -%}
+  {% if not loop.last -%}
+    {{ mailaddr }};
+  {%- else -%}
+    {{ ' ' + mailaddr }}
+  {%- endif %}
+{%- endfor %}
+
+Subject: {{ headerdata[1] }} by {{ headerdata[0] }}, actual week start from {{ headerdata[2] }}
 
 Body:
 
