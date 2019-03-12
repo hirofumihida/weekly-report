@@ -31,6 +31,8 @@ $ python3.7 -m pip install Jinja2 --user
 ## output sample
 
 ```
+$ python3.7 parse.py
+
 MailTo:  hoge@example.com
 
 MailCc: fuga1@example.com; fuga2@example.com
@@ -48,7 +50,6 @@ Body:
         Actual Working: Monday, Friday
         Descriptions: development, trouble shooting, handle support cases
 
-
     - Forecast:
 
         Project Name: Project A
@@ -64,7 +65,42 @@ Body:
 
 - Meeting
 
-(snip)
+    - Actual:
+
+        Project Name: Project A Monthly MTG
+        Actual Working:  Monday
+        Descriptions:
+
+    - Forecast:
+
+        No Forecast MTG
+
+- Training:
+
+    - Actual:
+
+        Project Name: Product A webinar
+        Actual Working:  Wednesday
+        Descriptions:
+
+    - Forecast:
+
+        No Forecast Training
+
+- Leave:
+
+    - Actual:
+
+        Leave Type: Sick Leave
+        Actual Leave:  Tuesday
+
+    - Forecast:
+
+        Leave Type: Paid Leave
+        Forecast Leave:  Friday
+
+        Leave Type: Holiday
+        Forecast Leave:  Thursday
 ```
 
 ## git command memo
