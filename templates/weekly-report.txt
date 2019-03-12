@@ -35,7 +35,7 @@ Body:
 {%- endfor %}
         Descriptions: {{ deliverydata['desc-actual'][0] }}
     {% endif %}
-{% endfor -%}
+{%- endfor %}
     - Forecast:
 {% for deliverydata in deliverydata -%}
     {% if deliverydata['forecasts']|length > 0 %}
@@ -54,6 +54,8 @@ Body:
 - Meeting
 
     - Actual:
+
+
 
         {{ meetingdata }}
 

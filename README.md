@@ -49,7 +49,7 @@ Body:
         Descriptions: development, trouble shooting, handle support cases
 
 
-- Forecast:
+    - Forecast:
 
         Project Name: Project A
         Customer Name: Customer A
