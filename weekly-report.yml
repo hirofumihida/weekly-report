@@ -27,7 +27,7 @@
             desc: 
             #  investigation:
             #  study:
-            #  leave:
+  leave:
           - name: FWP
             actual: []
             forecast: []
