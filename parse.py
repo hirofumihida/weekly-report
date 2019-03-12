@@ -5,13 +5,6 @@ from json import load
 
 f = open("weekly-report.yml", "r+")
 data = yaml.load(f)
-print(data[0])
-print(data[0]['name'])
-print(data[0]['author'])
-print(data[0]['sendto'])
-print(data[0]['training'])
-print(data[0]['meeting'])
-print(data[0]['leave'])
 
 subjectName = data[0]['name']
 reportAuther = data[0]['author']
