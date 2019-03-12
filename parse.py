@@ -19,7 +19,7 @@ deliveryData = data[0]['delivery']
 trainingData = data[0]['training']
 leaveData = data[0]['leave']
 
-print(deliveryData)
+# print(deliveryData)
 # print(trainingData)
 # print(leaveData)
 

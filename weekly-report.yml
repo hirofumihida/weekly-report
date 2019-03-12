@@ -9,29 +9,66 @@
             customer: Customer A
             billable: true
             working: {
-                    'actual':['Monday: dev','Friday: dev2'],
-                    'forecast':['Friday: dev3']
+                    'actual':[
+                            'Monday: dev',
+                            'Friday: dev2'
+                            ],
+                    'forecast':[
+                            'Friday: dev3'
+                            ]
+                    }
+            meeting: {
+                    'actual':[
+                            'Monday: Daily MTG',
+                            'Friday: WeekLy MTG'
+                            ],
+                    'forecast':[
+                            'Friday: Monthly MTG'
+                            ]
                     }
           - name: Project B
             customer: Customer B
             billable: false
             working: {
-                    'actual':['Monday: dev','Friday: dev2'],
-                    'forecast':['Friday: dev3']
+                    'actual':[
+                            'Monday: dev',
+                            'Friday: dev2'
+                            ],
+                    'forecast':[
+                            'Friday: dev3'
+                            ]
+                    }
+            meeting: {
+                    'actual':[
+                            'Monday: Daily MTG',
+                            'Friday: WeekLy MTG'
+                            ],
+                    'forecast':[
+                            'Friday: Monthly MTG'
+                            ]
                     }
           - name: Project C
             customer: Customer C
             billable: true
             working: {
-                    'actual':['Monday: dev','Friday: dev2']
+                    'actual':[
+                            'Monday: dev',
+                            'Friday: dev2'
+                            ]
+                    }
+            meeting: {
+                    'actual':[
+                            'Monday: Daily MTG',
+                            'Friday: WeekLy MTG'
+                            ]
                     }
   training:
-          - name: Product A webinar
-            actuals: [ Wednesday ]
+          - name:
+            actuals: []
             forecasts: []
-          - name: Product B webinar
-            actuals: [ Thursday ]
-            forecasts: []
+          #          - name: Product B webinar
+          #            actuals: []
+          #            forecasts: [ Thursday ]
   leave:
           - name: FWP
             actuals: []
