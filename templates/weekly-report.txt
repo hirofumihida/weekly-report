@@ -32,7 +32,7 @@ Body:
     {%- else -%}
       {{ ' ' + actualday }}
     {%- endif %}
-{%- endfor %}
+    {%- endfor %}
         Descriptions: {{ deliverydata['desc-actual'][0] }}
     {% endif %}
 {%- endfor %}
@@ -47,20 +47,44 @@ Body:
     {%- else -%}
       {{ ' ' + forecastday }}
     {%- endif %}
-{%- endfor %}
+    {%- endfor %}
         Descriptions: {{ deliverydata['desc-forecast'][0] }}
     {% endif %}
 {% endfor -%}
 - Meeting
 
     - Actual:
-
-
-
-        {{ meetingdata }}
-
+{% for meetingdata in meetingdata -%}
+    {% if meetingdata['actuals']|length > 0 %}
+        Project Name: {{ meetingdata['name'] }}
+        Actual Working: {% for actualday in meetingdata['actuals'] -%}
+    {% if not loop.last -%}
+      {{ actualday }},
+    {%- else -%}
+      {{ ' ' + actualday }}
+    {%- endif %}
+    {%- endfor %}
+        Descriptions: {{ meetingdata['desc-actual'][0] }}
+    {% else %}
+        No Actual MTG
+    {% endif %}
+{%- endfor %}
     - Forecast:
-
+{% for meetingdata in meetingdata -%}
+    {% if meetingdata['forecasts']|length > 0 %}
+        Project Name: {{ meetingdata['name'] }}
+        Actual Working: {% for forecastday in meetingdata['forecasts'] -%}
+    {% if not loop.last -%}
+      {{ forecastday }},
+    {%- else -%}
+      {{ ' ' + forecastday }}
+    {%- endif %}
+    {%- endfor %}
+        Descriptions: {{ meetingdata['desc-forecast'][0] }}
+    {% else %}
+        No Forecast MTG
+    {% endif %}
+{%- endfor %}
 - Training:
 
     - Actual:
