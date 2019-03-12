@@ -15,6 +15,7 @@ sendCc = data[0]['sendcc']
 deliveryData = data[0]['delivery']
 trainingData = data[0]['training']
 meetingData = data[0]['meeting']
+leaveData = data[0]['leave']
 
 PATH = os.path.dirname(os.path.abspath(__file__))
 TEMPLATE_ENVIRONMENT = Environment(
@@ -33,7 +34,8 @@ def create_weeklyreport():
             'mailaddrs': mailaddrsList,
             'deliverydata': deliveryData,
             'trainingdata': trainingData,
-            'meetingdata': meetingData
+            'meetingdata': meetingData,
+            'leavedata': leaveData
     }
     print(render_template('weekly-report.txt', context))
 

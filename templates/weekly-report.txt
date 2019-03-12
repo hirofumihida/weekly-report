@@ -88,9 +88,63 @@ Body:
 - Training:
 
     - Actual:
-
-        {{ trainingdata }}
-
+{% for trainingdata in trainingdata -%}
+    {% if trainingdata['actuals']|length > 0 %}
+        Project Name: {{ trainingdata['name'] }}
+        Actual Working: {% for actualday in trainingdata['actuals'] -%}
+    {% if not loop.last -%}
+      {{ actualday }},
+    {%- else -%}
+      {{ ' ' + actualday }}
+    {%- endif %}
+    {%- endfor %}
+        Descriptions: {{ trainingdata['desc-actual'][0] }}
+    {% else %}
+        No Actual Training
+    {% endif %}
+{%- endfor %}
     - Forecast:
+{% for trainingdata in trainingdata -%}
+    {% if trainingdata['forecasts']|length > 0 %}
+        Project Name: {{ trainingdata['name'] }}
+        Forecast Working: {% for forecastday in trainingdata['forecasts'] -%}
+    {% if not loop.last -%}
+      {{ forecastday }},
+    {%- else -%}
+      {{ ' ' + forecastday }}
+    {%- endif %}
+    {%- endfor %}
+        Descriptions: {{ trainingdata['desc-forecast'][0] }}
+    {% else %}
+        No Forecast Training
+    {% endif %}
+{%- endfor %}
+- Leave:
 
-- 
+    - Actual:
+{% for leavedata in leavedata -%}
+    {% if leavedata['actuals']|length > 0 %}
+        Leave Type: {{ leavedata['name'] }}
+        Actual Leave: {% for actualday in leavedata['actuals'] -%}
+    {% if not loop.last -%}
+      {{ actualday }},
+    {%- else -%}
+      {{ ' ' + actualday }}
+    {%- endif %}
+    {%- endfor %}
+    {% endif %}
+{%- endfor %}
+    - Forecast:
+{% for leavedata in leavedata -%}
+    {% if leavedata['forecasts']|length > 0 %}
+        Leave Type: {{ leavedata['name'] }}
+        Forecast Leave: {% for forecastday in leavedata['forecasts'] -%}
+    {% if not loop.last -%}
+      {{ forecastday }},
+    {%- else -%}
+      {{ ' ' + forecastday }}
+    {%- endif %}
+    {%- endfor %}
+    {% endif %}
+{%- endfor %}
+
