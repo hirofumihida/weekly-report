@@ -14,6 +14,21 @@
     2. execute python3 script
     3. output weekly report
 
+## prerequisites
+
+- PyYAML
+
+```
+$ python3.7 -m pip install PyYAML --user
+```
+
+- jinja2
+
+```
+$ python3.7 -m pip install Jinja2 --user
+```
+
+
 ## git command memo
 
 ```

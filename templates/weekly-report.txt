@@ -1,0 +1,8 @@
+MailTo: "{{ mailreceive[0] }}"
+MailCc: "{{ mailreceive[1] }}"
+
+Subject: 
+
+Body:
+
+
