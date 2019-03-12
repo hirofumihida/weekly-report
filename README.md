@@ -3,7 +3,9 @@
 - tech elements
     - python3
     - jinja2
+        - http://jinja.pocoo.org/docs/2.10/api/
     - yaml
+        - https://yaml.org/spec/1.2/spec.html
 
 - main function
     - parse yaml
